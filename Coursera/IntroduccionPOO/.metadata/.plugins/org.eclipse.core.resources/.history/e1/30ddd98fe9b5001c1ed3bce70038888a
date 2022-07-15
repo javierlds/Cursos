@@ -1,0 +1,28 @@
+package Practicas;
+
+public class Pizza {
+	
+	private String nombre;
+	private double costoDeProduccion;
+	private int cantidadProducida;
+	private double precioDeVenta;
+	
+	public int darCantidadProducida() {
+		// instruccion de retorno
+		return cantidadProducida;
+	}
+	
+	public double modificarPrecioVenta(double nuevoPrecio) {
+		return precioDeVenta = nuevoPrecio;
+
+	}
+	
+	public double informarCostoProduccion() {
+		return cantidadProducida * precioDeVenta;
+	}
+	
+	
+	
+
+
+}

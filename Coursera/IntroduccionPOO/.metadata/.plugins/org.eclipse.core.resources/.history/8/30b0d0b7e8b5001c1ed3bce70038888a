@@ -1,0 +1,22 @@
+package Practicas;
+
+public class Pizza {
+	
+	private String nombre;
+	
+	public Double costoDeProduccion() {
+		Double valor = 0;
+		return valor;
+	}
+	
+	public int cantidadProducida() {
+		int valor = 0;
+		return valor;
+	}
+	
+	public Double precioDeVenta() {
+		Double valor = 0;
+		return valor;
+	}
+
+}

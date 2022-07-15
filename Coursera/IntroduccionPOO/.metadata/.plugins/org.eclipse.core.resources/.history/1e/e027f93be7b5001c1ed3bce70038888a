@@ -1,0 +1,10 @@
+package Practicas;
+
+public class Cocinero {
+	
+	private Pizza pizza_1;
+	private String nombre;
+	
+	
+
+}

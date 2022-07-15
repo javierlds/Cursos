@@ -1,0 +1,7 @@
+package Practicas;
+
+public class Pizza {
+	
+	private String nombre;
+
+}
