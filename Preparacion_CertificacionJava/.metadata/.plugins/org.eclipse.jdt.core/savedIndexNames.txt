@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Personal\CURSOS\Preparacion_CertificacionJava\.metadata\.plugins\org.eclipse.jdt.core
+551068776.index
+1865797976.index
+3250400339.index

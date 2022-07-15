@@ -1,0 +1,61 @@
+
+ABSTRACCION:
+	Cuando se abstrae los datos de un objeto para entonces generar un molde
+	
+CLASES:
+	Modelo para generar un objeto, este analisis se le llama abstraccion
+	Modularidad
+	Dividir programas en diferentes partes
+	
+MODULARIDAD:
+	Partes que pueden componer un sistema, cada modulo vive por si mismo.
+	Reutilizar codigo
+	Evitar colapsos
+	Mantenible
+	Legibilidad
+	Resolucion rapida de problemas
+	
+DRY: Don't repeat yourself
+	- promueve la reduccion de duplicacion en programacion
+	- Toda pieza de informacion nunca deberia ser duplicada debido a que la duplicacion incrementa
+	  la dificultad en los cambios y evolucion
+	  
+HERENCIA:
+	Crear clases a partir de otras
+	se establece una relacion padre e hijo
+	
+	SUPERCLASE --->  Subclase(clases hijas)
+	
+METODO CONSTRUCTOR:
+	Dar un estado inicial al objeto
+	Tiene el mismo nombre de la clase
+	Son los parametros minimos que necesita el objeto para que pueda vivir
+	
+	
+**********************************RELACION ENTRE CLASES ************************************
+TIENE:
+		ASOCIACION
+		
+		AGREGACION(usa) - Las clases pueden funcionar una sin otra. 
+			ROLES:
+				Si la clase contendora es eliminada
+				Clase Contenedor
+				Clase elemento
+			Simbolo:
+				Rombo vacio
+				
+			
+		COMPOSICION(posee)
+			Lo constituye la clase TODO y la clase PARTE
+			Si un objeto TODO es destruido también son destruidos sus PARTES
+
+			Se apunta a la clase TOD 
+			SE COMPONE DE 
+			COMPONE A 
+
+			Ejemplo:
+				Una batería COMPONE A un celular
+				Un celular se compone de BATERIA
+			
+
+		

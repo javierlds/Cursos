@@ -1,0 +1,21 @@
+COMBINACIONES
+	Anexar:
+		similar a union del estandar SQL, es decir las estructuras de tablas deben
+		ser iguales.
+		
+		Opcion de menu:
+			PowerbiDesktop: 
+				Se cargan las fuentes tablaA y tablaB
+				transformar datos
+				ubicar la tabla donde queremos anexar
+				buscar opcion Combinar, Anexar consultas(se anexa tablaB)
+				
+	Combinaciones:
+		Es similar a los join de sql.
+		Se manejan los siguientes:
+			- Externa Izquierda
+			- Externa derecha
+			- Externa completa
+			- Interna
+			- Anti izquierda
+			- Anti derecha
