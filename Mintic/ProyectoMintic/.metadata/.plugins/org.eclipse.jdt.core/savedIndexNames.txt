@@ -1,4 +1,2 @@
-INDEX VERSION 1.131+D:\Personal\CURSOS\Mintic\ProyectoMintic\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.131+D:\CURSOS\Cursos\Mintic\ProyectoMintic\.metadata\.plugins\org.eclipse.jdt.core
 551068776.index
-3897568192.index
-1865797976.index
