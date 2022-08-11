@@ -6,6 +6,7 @@ package JavaSE;
  * @version 1.0
  * */
 
+import java.util.Locale;
 import java.util.Scanner;
 public class UsoString {
 
@@ -139,6 +140,11 @@ public class UsoString {
 
     interface  ValidaCorreo{
         String cadena(String correo);
+    }
+
+    public String usoUpperCase(String cadena){
+        return cadena.toUpperCase();
+
     }
 
 }

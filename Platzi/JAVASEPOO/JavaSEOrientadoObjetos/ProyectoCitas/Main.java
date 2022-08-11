@@ -43,6 +43,12 @@ public class Main {
         Patient patient = new Patient("Alejandra","alejandra@gmail.com");  // datos minimos para que un objeto pueda ser creado
         // System.out.println(patient.name); // estoy modificando directamente la variable, por tanto sale error.
         patient.setPhoneNumber("45655555888555");
+
+        EnumDiaSemana dia = EnumDiaSemana.LUNES; //imprimo uno de los valores del enum
+        // a continuacion se mostraran todos los valores del enum
+        for(EnumDiaSemana dias : EnumDiaSemana.values()){
+            System.out.println(dias);
+        }
         
         
 
