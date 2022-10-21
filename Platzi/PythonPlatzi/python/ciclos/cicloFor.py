@@ -27,8 +27,15 @@ def recorreString():
             valorLetra += 1
         print("Letra " + x + "=" + str(valorLetra))
 
+def pruebaFor():
+    for i in range(3):
+      print(i)
+    
+        
+
 if __name__ == '__main__':
-    recorreString()
+  #  recorreString()
+    pruebaFor()
     #imprimeRango()
     #imprimeLista()
     #run()

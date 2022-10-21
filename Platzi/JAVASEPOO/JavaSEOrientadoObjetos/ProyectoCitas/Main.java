@@ -3,22 +3,16 @@ package ProyectoCitas;
 import static ProyectoCitas.Menu.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.Scanner;
 public class Main {
 
     public static void main(String args[]){
 
         /*creando doctores*/
-        Doctor myDoctor = new Doctor("Jose Paez"); // Llamando el metodo constructor tiene diferentes formas de construir un objeto
-        myDoctor.showId();
-
-        Doctor myDoctorJav = new Doctor("JAVIER PAEZ");
-        myDoctorJav.showId(); // se incrementa por que el constructor lo hace
-
-//        showMenu();
-
+        
 
         /*creando empleados*/
+        /*
         var tipo = 10;
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy"); // Para generar una fecha
         Date fecha = new Date();     
@@ -43,15 +37,12 @@ public class Main {
         Patient patient = new Patient("Alejandra","alejandra@gmail.com");  // datos minimos para que un objeto pueda ser creado
         // System.out.println(patient.name); // estoy modificando directamente la variable, por tanto sale error.
         patient.setPhoneNumber("45655555888555");
-
+        */
+       
         EnumDiaSemana dia = EnumDiaSemana.LUNES; //imprimo uno de los valores del enum
         // a continuacion se mostraran todos los valores del enum
         for(EnumDiaSemana dias : EnumDiaSemana.values()){
             System.out.println(dias);
         }
-        
-        
-
-
     }
 }

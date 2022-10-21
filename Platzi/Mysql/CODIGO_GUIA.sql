@@ -1,0 +1,84 @@
+
+DROP PROCEDURE IF EXISTS P_ACTUALIZA_CHARSET
+
+
+CREATE PROCEDURE P_ACTUALIZA_CHARSET()
+BEGIN
+	DECLARE contador INT DEFAULT 0;
+	DECLARE v_nombre_tabla VARCHAR(80);
+	DECLARE c_tablas CURSOR FOR SELECT tab.table_name
+                                FROM information_schema.tables tab  
+                                WHERE tab.TABLE_SCHEMA  = 'infoturnos-db-unificada-0.1-dev';
+    DECLARE EXIT HANDLER FOR NOT FOUND SET contador = 0;                               
+    /*OPEN c_tablas;
+      c_loop1: LOOP
+	      FETCH c_tablas INTO v_nombre_tabla;
+	        SELECT @sql := CONCAT( "ALTER TABLE `infoturnos-db-unificada-0.1-dev`.", v_nombre_tabla, " DEFAULT CHARSET = utf8mb3,  COLLATE utf8mb3_general_ci;" ) ;
+            PREPARE stmt FROM @sql;
+            EXECUTE stmt;
+            DEALLOCATE PREPARE stmt;
+          END LOOP c_loop1;
+    CLOSE c_tablas;*/
+   
+   OPEN c_tablas;
+      c_loop2: LOOP
+	      FETCH c_tablas INTO v_nombre_tabla;
+            SELECT @sql2 := CONCAT( "ALTER TABLE `infoturnos-db-unificada-0.1-dev`.", v_nombre_tabla, " CONVERT TO CHARACTER SET utf8mb3 COLLATE  utf8mb3_general_ci" ) ;
+            PREPARE stmt2 FROM @sql2;
+            EXECUTE stmt2;
+            DEALLOCATE PREPARE stmt2;
+          END LOOP c_loop2;
+    CLOSE c_tablas;
+END 
+
+
+SELECT CONCAT( "ALTER TABLE `infoturnos-db-unificada-0.1-dev`.", table_name, " DEFAULT CHARSET = utf8mb3,  COLLATE utf8mb3_general_ci ;" ) 
+FROM   information_schema.TABLES 
+WHERE  table_schema IN ('infoturnos-db-unificada-0.1-dev' );
+   
+   ALTER TABLE `infoturnos-db-unificada-0.1-dev`.IT_ABANDONOS DEFAULT CHARSET = utf8mb3,  COLLATE utf8mb3_general_ci ;
+
+
+ SELECT CONCAT( "ALTER TABLE `infoturnos-db-unificada-0.1-dev`.", 'v_nombre_tabla', " DEFAULT CHARSET = utf8mb3,  COLLATE utf8mb3_general_ci;" ) ;
+ 
+
+ALTER TABLE 
+
+
+ALTER TABLE `infoturnos-db-unificada-0.1-dev`.IT_PERFILES MODIFY COLUMN ASESORIA_GLOBAL TINYINT DEFAULT 0 NOT NULL;
+ALTER TABLE `infoturnos-db-unificada-0.1-dev`.IT_TIPOS_TURNOS_SEGMENTO MODIFY COLUMN ID_TIPOS_TURNO_SEGMENTO bigint unsigned auto_increment NOT NULL COMMENT 'Identificador unico de la tabla IT_TIPOS_TURNOS_SEGMENTO';
+ALTER TABLE `infoturnos-db-unificada-0.1-dev`.IT_TURNOS MODIFY COLUMN CANAL varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT 'FISICO' NULL;
+
+drop trigger `infoturnos-db-unificada-0.1-dev`.SUCURSALES_INSERT
+
+CREATE TRIGGER `infoturnos-db-unificada-0.1-dev`.SUCURSALES_INSERT AFTER INSERT ON `infoturnos-db-unificada-0.1-dev`.IT_SUCURSALES FOR EACH ROW BEGIN
+		DECLARE V_COMPANY_ID VARCHAR(20);
+		SET V_COMPANY_ID =(SELECT VALOR  FROM IT_PARAMETROS WHERE NOMBRE = 'COMPANY_ID' AND GRUPO = 'ADMINISTRACION');
+		INSERT IT_SUCURSALES_AUDIT(INFOTURNOS_ID, ADDRESS, OFFICE_NAME, COMPANY_ID, DATE_AUDIT, INTEGRATED)
+		VALUES(NEW.ID_SUCURSAL, NEW.DIRECCION, NEW.NOMBRE_SUCURSAL, V_COMPANY_ID,NOW(), 0);
+END ;
+
+CREATE TRIGGER `infoturnos-db-unificada-0.1-dev`.SUCURSALES_UPDATE AFTER UPDATE ON `infoturnos-db-unificada-0.1-dev`.IT_SUCURSALES FOR EACH ROW BEGIN
+DECLARE V_COMPANY_ID VARCHAR(20);
+SET V_COMPANY_ID = (SELECT VALOR  FROM IT_PARAMETROS WHERE NOMBRE = 'COMPANY_ID' AND GRUPO = 'ADMINISTRACION');
+INSERT IT_SUCURSALES_AUDIT(INFOTURNOS_ID, ADDRESS, OFFICE_NAME, COMPANY_ID, DATE_AUDIT, INTEGRATED)
+VALUES(NEW.ID_SUCURSAL, NEW.DIRECCION, NEW.NOMBRE_SUCURSAL, V_COMPANY_ID,NOW(), 0);
+END;
+
+CREATE TRIGGER `infoturnos-db-unificada-0.1-dev`.TIPOS_TURNO_INSERT AFTER INSERT ON `infoturnos-db-unificada-0.1-dev`.IT_TIPOS_TURNO FOR EACH ROW BEGIN
+		DECLARE V_COMPANY_ID VARCHAR(20);
+		SET V_COMPANY_ID =(SELECT VALOR FROM IT_PARAMETROS WHERE NOMBRE = 'COMPANY_ID' AND GRUPO = 'ADMINISTRACION');
+		INSERT IT_TIPOS_TURNO_AUDIT(INFOTURNOS_ID, DESCRIPTION, ALIAS, COMPANY_ID, DATE_AUDIT, INTEGRATED)
+		VALUES(NEW.ID_TIPO_TURNO, NEW.DESCRIPCION_TURNO, NEW.ALIAS, V_COMPANY_ID,NOW(), 0);
+END 
+
+
+CREATE TRIGGER `infoturnos-db-unificada-0.1-dev`.TIPOS_TURNO_UPDATE AFTER UPDATE ON `infoturnos-db-unificada-0.1-dev`.IT_TIPOS_TURNO FOR EACH ROW BEGIN
+		DECLARE V_COMPANY_ID VARCHAR(20);
+		SET V_COMPANY_ID = (SELECT VALOR FROM IT_PARAMETROS WHERE NOMBRE = 'COMPANY_ID' AND GRUPO = 'ADMINISTRACION');
+		INSERT IT_TIPOS_TURNO_AUDIT(INFOTURNOS_ID, DESCRIPTION, ALIAS, COMPANY_ID, DATE_AUDIT, INTEGRATED)
+		VALUES(NEW.ID_TIPO_TURNO, NEW.DESCRIPCION_TURNO, NEW.ALIAS, V_COMPANY_ID,NOW(), 0);
+END
+
+
+ALTER TABLE `infoturnos-db-unificada-0.1-dev`.IT_ACOMPANANTES CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;

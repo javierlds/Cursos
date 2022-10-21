@@ -1,13 +1,13 @@
 package ProyectoCitas;
 
-public class Empleado extends Persona{
+public class Empleado {
 
     static  int idEmpleado = 0;
     private double sueldo;
     private String cargo;
     
 
-
+/*
     public Empleado(String nombre, char genero, int edad, String direccion, double sueldo, String cargo){
         super(nombre,genero,edad,direccion);
         idEmpleado ++;  // cada vez que se cree un objeto aumenta la variable statica.
@@ -39,5 +39,5 @@ public class Empleado extends Persona{
 
     public void setCargo(String cargo){
         this.cargo = cargo;
-    }
+    }*/
 }

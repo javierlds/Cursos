@@ -9,32 +9,19 @@ package ProyectoCitas;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor {
+public class Doctor extends Persona{
     // encapsulamiento
-    static int id = 0;  // como es estatico se aumentara por cada instancia
-    private String name;
-    private String lastName;
-    private char sexo;
-    private String email;
-    private String speciality;
+    
+    private String especialidad;
+    private String numeroRegistro;
 
     //constructor
-    public Doctor(String name){       // los diferentes constructores me permite sobrecarga
-        System.out.println("Nombre del doctor es: " + name);
-        id++; // incremento el id del doctor en 1
-    }
-    public Doctor(int id, String name, String lastName, char sexo, String email, String speciality){
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.sexo = sexo;
-        this.email = email;
-        this.speciality = speciality;  // this -> hace referencia a los elementos de la clase
-    }
-
-    //comportamientos
-    public void showName(){
-        System.out.println("Doctor: " + getName() + " Speciality: " + getSpeciality());
+    // public Doctor(String name){       // los diferentes constructores me permite sobrecarga
+       //  System.out.println("Nombre del doctor es: " + name);
+    // }
+    public Doctor(String nombre, String apellido, int edad, char genero, String email, String direccion, String numeroTelefono, String especialidad){
+        super(nombre, apellido, edad, genero, email, direccion, numeroTelefono);  // Indica que una variable o un metodo es de la clase padre(SUPERCLASE) / esto permite saber que, ya los atributos de la super clase estan inicializados.
+        this.especialidad = especialidad;  // this -> hace referencia a los elementos de la clase
     }
 
     ArrayList<AvailableAppointment> availableAppointment = new ArrayList<>();// coleccion de objetos, dentro de <> va el tipo en este caso es el de la clase anidada.
@@ -49,57 +36,25 @@ public class Doctor {
         return availableAppointment;
     }
 
-    public void showId(){
-        System.out.println("Id doctor:" + id);
+    @Override
+    public String toString(){
+        return super.toString() + "\n especialidad: " + this.especialidad + "\n AVAILABLE:" + availableAppointment.toString(); // Reutiliza el metodo toString de la clase padre.
     }
 
-    public int getId(){
-        return id;
+    public String getespecialidad(){
+        return especialidad;
     }
 
-    public void setId(int id){
-        this.id = id;
+    public void setespecialidad(String especialidad){
+        this.especialidad = especialidad;
     }
 
-    public String getName(){
-        return name;
+    public String getnumeroRegistro(){
+        return this.numeroRegistro;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getLastName(){
-        return lastName;
-    }
-
-    public void setLastName(String lastName){
-        this.lastName = lastName;
-
-    }
-
-    public String getSpeciality(){
-        return speciality;
-    }
-
-    public void setSpeciality(String speciality){
-        this.speciality = speciality;
-    }
-
-    public char getSexo(){
-        return sexo;
-    }
-
-    public void setSexo(char sexo){
-        this.sexo = sexo;
-    }
-
-    public String getEmail(){
-        return email;
-    }
-
-    public void setEmail(String email){
-        this.email = email;
+    public void setnumeroRegistro(String numeroRegistro){
+        this.numeroRegistro = numeroRegistro;
     }
 
     public static class AvailableAppointment{
@@ -135,13 +90,11 @@ public class Doctor {
             this.time = time;
         }
 
+        @Override
+        public String toString(){
+            return "Available appointments \nDate: " + date + "\nTime:" + time;  // salto de linea.
+        }
 
-
-        
-    
 
     }
-
-
-
 }
