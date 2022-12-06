@@ -28,7 +28,7 @@ public class PrincipalGenericos {
         clientesLista.forEach((n) -> System.out.println(n.getNombre())); // para imprimir la lista de clientes
         enterosLista.forEach(System.out::println);
 
-        List<String> nombres =
+
     }
 
     // Genericos reutilizables T = Listas // Parametros genericos

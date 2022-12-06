@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Uso Selectores combinadores</title>
+        <style>
+            div p{   /*  solo para los div*/
+                color:Lime;
+            }
+            div > div{  /* div hijo */
+                background:Cyan ;
+            }
+            .es{  /* para objetos que usen solo la clase .es */
+                background:SpringGreen; 
+            }
+
+            div + section{ /* estilo para el primer section seguido del div */
+                background: Maroon;
+            }
+
+            div ~ p{ 
+                background: YellowGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div> <!-- solo le pone el color al div inmediatamente seguido-->
+                <p>platzi</p>
+                <p>otros</p>
+                <p>otros 2</p>
+                <div class = "es">ES</div>
+            </div>
+        </div>
+        <p>clase de selectores</p> <!-- todo lo que esta despues de div p llevara  el style div ~p -->
+        <p>clase de selectores2</p>
+        <div></div>
+        <section>es lo mejor</section> <!-- este section se le pone el color inmediatamente seguido del div tal como lo hace el style div + section-->
+    </body>
+</html>

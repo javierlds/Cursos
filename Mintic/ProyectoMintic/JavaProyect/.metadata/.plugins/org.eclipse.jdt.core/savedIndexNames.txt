@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+D:\CURSOS\Cursos\Mintic\ProyectoMintic\JavaProyect\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2372639716.index
+1775075322.index
+2328269416.index
+641277637.index

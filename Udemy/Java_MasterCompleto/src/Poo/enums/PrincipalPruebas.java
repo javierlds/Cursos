@@ -8,5 +8,7 @@ public class PrincipalPruebas {
         EjemploEnums enums = new EjemploEnums();
         enums.asignaEnum();
 
+        System.out.println("" + Rol.ROLE_ADMIN_CONFIGURACION_GENERAL.getCodigo());
+
     }
 }

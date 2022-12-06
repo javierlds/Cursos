@@ -1,0 +1,8 @@
+
+
+HTML  => Lenguaje de marcas de hipertexto
+
+<etiqueta> </etiqueta> => apertura y cierre de etiquetas
+<etiqueta atributo = "valor ">TEXTO O DATOS </etiqueta> => la etiqueta puede tener atributos
+
+<strong> Hola mundo desde html </strong> --> Negrita
