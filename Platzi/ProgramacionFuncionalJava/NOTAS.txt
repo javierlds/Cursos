@@ -1,0 +1,25 @@
+FUNCIONES PURAS: 	Se puede predecir el resultado f(x) = x3   ==> f(3)= 27
+					No puede invocar una funcion IMPURA
+					Puede invocar una funcion PURA
+					
+FUNCIONES IMPURAS:	Genera efecto secundario, son inevitables se puede reducir
+
+OBJETIVO: Tener la mayor cantidad de funciones puras
+
+
+
+FUNCIONES DE ORDEN MAYOR:
+		Una funcion de orden mayor cumple al menos con una de estas caracteristicas:
+			1. Toma otra función como parámetro
+			2. Retorna una función como resultado 
+			
+			EJ:
+				int foo(function param)
+				Function bar(int x)
+				
+				
+FUNCIONES LAMBDA: Es una funcion anonima :
+
+					EJ:
+						Function no anonima => Function baz = ....
+						int foo(...)

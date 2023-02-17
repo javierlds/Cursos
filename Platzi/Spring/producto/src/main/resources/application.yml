@@ -1,0 +1,43 @@
+spring:
+    profiles:
+      active: prod
+
+server:
+  servlet:
+    context-path: /productos-market/api
+
+
+---
+spring:
+  profiles: dev
+server:
+  port: 4040
+
+---
+spring:
+  profiles: pru
+server:
+  port: 5050
+
+---
+spring:
+  profiles: prod
+server:
+  port: 8080
+
+---
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: javier12345
+    url: jdbc:postgresql://localhost/postgres
+    platform: postgres
+    initialization-mode: always
+    continue-on-error: true
+jpa:
+  show-sql: true
+  generate-ddl: true
+  hibernate:
+    ddl-auto: create
+  database: postgresql

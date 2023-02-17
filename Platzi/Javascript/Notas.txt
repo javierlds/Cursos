@@ -1,0 +1,2 @@
+async => promesa o funcion asincrona
+await => retorna elvalor de la promesa, no avance hasta que acabe 
