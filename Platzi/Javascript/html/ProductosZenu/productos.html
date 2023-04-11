@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Registro Productos</title>
+        <link rel="stylesheet" href="D:/Cursos/Platzi/Javascript/html/ProductosZenu/bootstrap/bootstrap_dist/css/bootstrap.min.css">
+        <script src="D:/Cursos/Platzi/Javascript/html/ProductosZenu/bootstrap/bootstrap_dist/js/bootstrap.bundle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Registro Productos</h1>
+            <form id="formProductos" method="post">
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="codigo" class="col-sm-9 col-form-label">Codigo Producto</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="codigo" name="codigo" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Por favor, ingrese un codigo')"> 
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="nombre" class="col-sm-12 col-form-label ">Nombre Producto </label>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id= "nombreProducto" name="nombreProducto">
+                    </div>
+                </div>
+                <div class="mb-2 row" >
+                    <div class="col-sm-2">
+                        <label for="descripcion" class="col-sm-12 col-form-label">Descripcion producto</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id= "descripcion" name="descripcion">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="porciones" class="col-sm-9 col-form-label ">Porciones</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="porciones" name="porciones">
+                    </div>                        
+                </div>
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="peso" class="col-sm-8 col-form-label">Peso</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="peso" name="peso">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="preparacion" class="col-sm-8 col-form-label">Preparacion</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="preparacion" name="preparacion">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="precio" class="col-sm-8 col-form-label">Precio</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="precio" name="precio">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <div class="col-sm-2">
+                        <label for="precioGramo" class="col-sm-8 col-form-label">Precio gramo</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="precioGramo" name="precioGramo">
+                    </div>
+                </div>
+                
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                
+                
+            </form>
+        </div>
+    </body>
+</html>

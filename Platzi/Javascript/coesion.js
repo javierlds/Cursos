@@ -1,8 +1,10 @@
 //////////////////////////////////////// COESION IMPLICITA
 
+var a = 4 + "7" // lo concatena.
+
 // Es cuando el lenguaje interpreta el tipo de operacion, por ejemplo :
 var b = 5 * "8"
-// el resultado es numero, lo interprega javascript
+// el resultado es numero, lo interpreta javascript
 
 
 //////////////////////////////////////// COESION EXPLICITA

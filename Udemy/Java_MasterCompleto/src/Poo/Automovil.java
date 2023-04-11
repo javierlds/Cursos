@@ -101,7 +101,7 @@ public class Automovil {
                 + "\nTipo:" + getTipoAut().getNombre() + " - Puertas: " + getTipoAut().getPuertas() + " - Descripcion:" + getTipoAut().getDescripcion() + "\n"; // el \n es para nueva linea
     }
 
-    @Override // se sobreescribio el motodo Equals para comparar dos de los atributos y que sea considerado como unico
+    @Override // se sobreescribio el metodo Equals para comparar dos de los atributos y que sea considerado como unico
     public boolean equals(Object obj) {
         if(this == obj){
             return true;

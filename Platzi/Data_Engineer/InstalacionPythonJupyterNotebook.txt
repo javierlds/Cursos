@@ -1,0 +1,9 @@
+
+-- Instalacion de python y jupyter notebook
+1. bajar el instalador:
+2. Ejecutar y poner en el path del sistema la ruta donde esta python
+3. Para instalar jupyter notebook, se debe asegurar de tener instalado pip, si no esta instalado ejecutar: python -m ensurepip --default-pip
+4. ejecutar el comando: pip install jupyter, si no lo reconoce desde el cmd, en el path se debe agregar la ruta: 
+	C:\Users\japaez\AppData\Local\Programs\Python\Python311\Scripts
+5. para abrir jupyter ejecutar desde la linea de comandos: jupyter notebook
+

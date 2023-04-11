@@ -10,5 +10,7 @@ public class PrincipalPruebas {
 
         System.out.println("" + Rol.ROLE_ADMIN_CONFIGURACION_GENERAL.getCodigo());
 
+
+
     }
 }

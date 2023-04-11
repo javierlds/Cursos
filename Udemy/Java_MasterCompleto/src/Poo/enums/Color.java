@@ -1,6 +1,6 @@
 /*
 * Enum =>  Es una coleccion de valores constantes o atributos constantes
-* los valores de un ENUM son FINAL
+* los valores de un ENUM son estaticos y FINAL
 * */
 package Poo.enums;
 

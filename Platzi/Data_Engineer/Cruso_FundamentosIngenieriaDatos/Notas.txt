@@ -1,0 +1,124 @@
+
+
+********************* DATA OPS **************
+	Es una Filosofia
+	1. Data engineer migracion de codigo a produccion
+	componentes:
+		* Agile
+		* DevOps -> operaciones de desarrollo,
+		* Lean manufacturing -> cosas de valor, mapear, crear flujo
+		
+		
+	LENGUAJES DE PROGRAMACION:
+		- python.
+		- r
+		- scala.
+		- java
+		- javascript
+	
+	DONDE ESCRIBIR CODIGO:
+		- jupyter notebooks
+		- Visual studio code=>Editor codigo
+		- terminal
+		- git - gitlab
+	
+	AUTOMATIZACION - SCRIPTING
+		* Python => lenguaje sencillo- librerias variadas
+		* generar copiar archivos
+		* modificaciones masivas
+		* regla beetlejuice => decidir cuando automatizo
+		
+	FUENTES DE DATOS - SQL NOSQL , API, WEBSCRAPING
+		sql
+		
+		A => (Amoticity)Atomicity
+		C => (Consistency)Consistencia
+		I => (Isolation)Aislamiento
+		D => (Durability)Durabilidad
+		
+		NoSQL:
+			MongoDB
+			ElasticSearch
+			
+		Datos de gobieron
+		Redes sociales 
+		
+	API:
+		Consume informacion de otras plataformas
+		permite utilizar capacidades mandando un input y recibiendo un output.
+	
+	DISEÑO BASADO EN MODELOS:
+		MODELO DE DATOS:
+			1. Modelo de datos relacional
+			2. Modelo de datos semiestructurado
+			3. Modelos de datos Entidad relacion
+			4. Modelo de datos basado en objetos.
+			
+	PROCESAMIENTO DE DATOS PIPELINES:
+		Extraer 			-transformar- Cargar(load) 
+		Archivos							Data Warehouse(OLAP)
+		Base de datos OLTP	
+		Web Scraping y API
+		
+	AUTOMATIZAR PROCESO DE DATOS AIRFLOW
+		- Que va a correr
+		- en que secuencia
+		- cuando y cada cuanto va a correr
+		
+		ARIFLOW
+			* El que apoyando tareas
+			* conexion de las mismas
+			* manejador de tiempos
+			
+	CONTAINERS
+		DOCKER => 
+			Utiliza contenedores
+			aisla sistema operativos
+			aplicaciones corren en ambiente controlado
+			
+		ORQUESTACION
+			Que contenedores corren o no.
+	
+	MANEJO DE AMBIENTES PARA DATOS:
+	
+	TESTING SOFTWARE DE DATOS:
+		Pruebas E2E
+		
+	CI/CD BASICO
+		DATAOPS VS DEVOPS
+		DevOps esta enfocado en el ciclo de desarrollo de software y el proceso de despliegue de codigo a produccion.
+		Mientras que DataOps esta enfocado en el ciclo de vida de los datos, se usa para garantizar la calidad de los datos
+		y mejorar la velocidad en que estos son entregados
+		
+	SERVIDORES Y COMPUTACION EN LA NUBE
+		AWS
+		AZURE
+		GOOGLE CLOUD PLATFORM
+
+	MEDICION DE INDICADORES
+		
+	
+	BUSCANDO OPORTUNIDADES COMO INGENIERO DE DATOS
+		Prepara tu linkedin
+		conecta fisica y virtualmente
+		torre- linkedin -> buscar trabajo
+		aprender ingles
+		participa en un evento
+		
+	EVOLUCION EN EL ROL GANANDO SENIORITY COMO DATA ENGINEER
+		Primer dia: aprende.
+		Primer mes: contribuye
+		Primer año: mentorea
+		
+	EVOLUCION EN EL ROL
+		Manager
+		arquitecT
+		
+	UNIRME AL DISCORD DE PLATZI
+	
+	QUE EMPEZAR A APRENDER
+		PYTHON PARA DATA
+		GITHUB
+		TERMINAL
+		SQL
+	

@@ -1,0 +1,8 @@
+HTML SEMANTICO:
+	- Etiquetas con significado
+	- Ayuda a tu sitio web a ser accesible
+	- mejora tu posicionamiento SEO
+	- codigo mas claro
+	
+	
+	pagina: htmlreference.io

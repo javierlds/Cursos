@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head><!--Es lo que preparo antes de que cargue a nivel visual el sitio web-->
+        <meta charset="utf-8"><!--para que funcionen las tildes-->
+        <title>Proyecto de prueba</title>
+        <script type="text/javascript"><!--serie de instrucciones-->
+            
+            function suma(a,b) {
+                let resultado = a +b ;
+                alert("el resultado de la suma es: " + resultado);
+            }
+            function mostrarNombre(n){
+                document.getElementById("mensaje").innerHTML = n.country[3].probability; // Documento es todo el body  , innerhtml es el texto interno de una etiqueta en este caso de la etiqueta P con id mensaje
+            }
+
+            async function traerPais(nombre){ // funcion asincrona que son aquellas que no se bloquean y no detienen la ejecucion del programa principal
+                const respuesta = await fetch("https://api.nationalize.io?name=diego");  // fetch funcion especial de javascript para trear datos de otra pagina  //await es de espera es decir espera a que se ejecute lo de la pagina que llama
+                console.log("RESPUESTA: " +respuesta.ok)
+
+                if(!respuesta.ok){ // ok debe ir en mayuscula y valida si trajo datos de la API
+                    let oops = "404 no encontre nada"; // let => solo existe en el contexto de estas llaves
+                    alert(oops);
+                    throw new Error(oops); // para el manejo de errores
+                }
+                const nombreResultado = respuesta.json(); // se guarda el json en la variable
+                return nombreResultado; // esto retorna hasta que el awit termine 
+            } 
+            traerPais().then(mostrarNombre); //.then despues de que este listo ejeucta la funcion // funcion async Wait // el parametro n de la funcion mostrarNombre es lo que retorna la funcion asyncrona
+
+        </script> <!--para agregar codigo javascript-->
+    </head>
+    <body>  <!--lo que se ve visualmente-->
+        <h1>Titulo de mi proyecto</h1>
+       <!-- <script type="text/javascript">
+            suma("platzi ","es genial");
+        </script>
+        <p>Este es un proyecto nuevo</p>-->
+        <p id ="mensaje">Cargando...</p>
+       <!-- <script type="text/javascript">
+          //  mostrarNombre("JAVIERRRR");
+        </script>-->
+
+    </body>
+</html>
+
+<!--
+desde el navegador en la consolo si pongo 
+mostrarNombre("este es el momento de <strong>Javier</strong>")
+me pone el texto de Javier en negrilla
+
+-->
+
+<!--
+API: Aplication program interface  -- traer datos de otro lado
+
+
+-->

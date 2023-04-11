@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+
+"""
+con esta primera linea puedo agregar caracteres especiales
+"""
 import keyword
 
 """
@@ -29,10 +34,17 @@ print(nombre,apellido,apellido2,edad) #otra forma de concatenar
 """
 para ver las palabras reservadas de python:
 """
-print(keyword.kwlist)
+#print(keyword.kwlist)
 
 ''' 
 Creacion de multiples variables en una sola linea
 '''
 nombre3, apellido3 = 'javier', 'paez'
 print('El nombre2 es: ' + nombre3 + ' y apellido es: ' + apellido3)
+
+edad1, edad2 = 32,45
+calculo = edad1 + edad2
+print('la suma del calculo es: ' + str(calculo))
+
+usuario =input("Cual es tu nombre:")
+print("Usando input: " + usuario)

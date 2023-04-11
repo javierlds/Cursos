@@ -1,2 +1,28 @@
+
+
+JS -> Compile time -> runtime
+
+la maquina entiende bytecode
+compile time -> traduce lo que hacemos para que lo entienda la maquina (lenguajes estatico)
+Runtime => No se compila, se abre en el navegador y se prueba
+
+
+JAVASCRIPT -> Es un lenguaje interpretado, lee linea por linea desde el navegador. Lenguaje Compilado
+				JS es Backwards compatible, la compatibilidad con versiones anteriores significa que cuando se acepta
+				como js valido no habra un cambio futuro que haga que el codigo deje de funcionar.
+
+********** Funcionalidad en el navegador MOTOR V8:
+   MOTOR V8, Traduce el codigo
+	1. Lenguaje desarrollado 
+	2. Genera un arbol de palabras clave, interpreta o mejora el codigo
+	3. Codigo binario
+	4. Entrega al navegador
+
+
+
+
+
+
 async => promesa o funcion asincrona
 await => retorna elvalor de la promesa, no avance hasta que acabe 
+
