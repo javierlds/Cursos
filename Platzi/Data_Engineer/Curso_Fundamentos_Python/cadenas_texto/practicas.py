@@ -7,6 +7,8 @@ def minusculas(cadena):
     return nuevaCadena
 
 
+
+
 if __name__ == "__main__":
     texto = input("Ingrese texto a transformar")
     print("El texto " + texto + "en mayusculas: " + mayusculas(texto))

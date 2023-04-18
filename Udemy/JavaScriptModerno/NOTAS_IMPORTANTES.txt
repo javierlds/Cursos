@@ -1,0 +1,14 @@
+
+
+HTML  => Lenguaje de marcas de hipertexto
+
+<etiqueta> </etiqueta> => apertura y cierre de etiquetas
+<etiqueta atributo = "valor ">TEXTO O DATOS </etiqueta> => la etiqueta puede tener atributos
+
+<strong> Hola mundo desde html </strong> --> Negrita
+
+
+*********************** HERRAMIENTAS JAVASCRIPT ******************
+ESLINT =>Configurar que quiero que eslint revise por mi 
+         Software que permite mostrar errores en codigo y hacer correciones:
+		 comando de instalacion: npm i -g eslint
