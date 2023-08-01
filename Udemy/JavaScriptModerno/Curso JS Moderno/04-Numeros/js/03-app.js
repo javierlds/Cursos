@@ -1,11 +1,10 @@
 
 // Creando menu en javascript
+var num01form = parseInt(document.getElementById("num01").value);
+var num02form = parseInt(document.getElementById("num02").value);
 
 function realizaOperacion(operador){
     let resultado = 0;
-    var num01form = parseInt(document.getElementById("num01").value);
-    var num02form = parseInt(document.getElementById("num02").value);
-
     //if(operador === 1){ // === es una validacion de tipo y dato, == hace la conversion para la validacion
     if(operador != 'o'){
         resultado = eval(num01form + operador + num02form); // eval permite ejecutar una expresion tipo string como expresion matematica
@@ -14,10 +13,35 @@ function realizaOperacion(operador){
 }
 
 function redondeo(){
+    let numred=0;
+    let nuevorendondeo;
     opcion = parseInt(prompt("Cual numero quiere redondear el 1 o el 2"));
     resultado = opcion ===1 ?resultado = Math.round(num01form) :resultado = Math.round(num02form);
     document.getElementById("resultado").value = resultado;
+    opcion = parseInt(prompt("Desea redondear hacia arriba (1) o hacia abajo(2)"))
+    if(opcion ===1){
+        numred = parseInt(prompt("Digite numero a redondear:"))
+        nuevorendondeo = Math.ceil(numred);
+        alert(`El numero ${numred} redondeado es: ${nuevorendondeo}`)
+    }else{
+        nuevorendondeo = Math.floor(numred);
+        alert(`El numero ${numred} redondeado es: ${nuevorendondeo}`)
+    }
+    
 }
+
+// valor maximo:
+Math.max()// digitar serie de valores
+ // valor minimo:
+ Math.min()   // digitar serie de valores.
+ // potencia
+ Math.pow(2,4)  // 2 a la 4
+ // aleatorio
+ Math.random()*20
+ //aleatorio dentro dentro de un rango
+ Math.floor(Math.random()*30)
+
+
 
 function operador(){
     const operacionMat =["+","-","/","*"]

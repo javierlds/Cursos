@@ -17,6 +17,13 @@ public class Clase1Ejemplo {
         auto1.setFabricante("Sofasa francia");
         auto1.setColor(Color.AZUL);
 
+        Automovil auto2 = new Automovil();
+        auto2.setMarca("Mazda");
+        auto2.setFabricante("Mazda motors");
+        auto2.setColor(Color.AMARRILLO);
+
+        System.out.println(auto1.equals(auto2));
+
         System.out.println("Color del auto: " + auto1.getColor());
 
     }

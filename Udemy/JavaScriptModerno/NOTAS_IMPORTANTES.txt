@@ -1,14 +1,22 @@
 
 
-HTML  => Lenguaje de marcas de hipertexto
+HTML  => Lenguaje de marcas de hipertexto(Hypertext Markup Language)
 
 <etiqueta> </etiqueta> => apertura y cierre de etiquetas
 <etiqueta atributo = "valor ">TEXTO O DATOS </etiqueta> => la etiqueta puede tener atributos
 
 <strong> Hola mundo desde html </strong> --> Negrita
 
+---------------------------------------- JAVASCRIPT ----------------------------------------
+
 
 *********************** HERRAMIENTAS JAVASCRIPT ******************
 ESLINT =>Configurar que quiero que eslint revise por mi 
          Software que permite mostrar errores en codigo y hacer correciones:
 		 comando de instalacion: npm i -g eslint
+
+
+
+**************CODIGO:
+document.querySelector('.contenido2').innerHTML : Me permite obtener todo lo relacionado con la clase .contenido2
+document.querySelector('.contenido2').innerHTML = `${texto2} tambien aprende javascript` => esto asigna lo nuevo a lo que este asociado ese elemento reemplazando todo lo que ya existe

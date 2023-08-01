@@ -11,6 +11,14 @@ h1, p, a {
     line-height:.8;
     color: white;
 }
+
+.contenido2 {
+    max-width: 1200px;
+    margin: 5rem auto 0 auto;
+    color: blue;
+    font-size: 3rem;
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
 .contenido {
     max-width: 1200px;
     margin: 5rem auto 0 auto;

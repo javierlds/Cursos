@@ -16,6 +16,8 @@ public class Automovil {
     private int capacidadLitros;
     private TipoAutomovil tipoAut;  // uso de enums con argumentos
 
+    static String colorPatente = "Naranja";
+
     public Automovil(String marca, String fabricante, Color color, int modelo, int capacidadLitros, TipoAutomovil tipoAut){ // sobrecarga de constructor
         this.marca = marca;
         this.fabricante = fabricante;
