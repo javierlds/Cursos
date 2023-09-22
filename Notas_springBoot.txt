@@ -1,0 +1,192 @@
+********************* BEAN *******************
+Un bean es simplemente un objeto que ha sido creado y configurado por Spring, y que está listo para ser utilizado por la aplicación.
+Imagina que tienes una clase en tu aplicación que se encarga de enviar correos electrónicos. Si quieres utilizar esa clase en tu aplicación, 
+normalmente tendrías que crear una instancia de esa clase manualmente en cada lugar donde la necesites, lo cual puede ser tedioso y propenso a errores.
+En cambio, si declaras esa clase como un "bean" en tu archivo de configuración de Spring, Spring se encargará de crear y configurar automáticamente 
+una instancia de esa clase por ti. Luego, puedes simplemente "inyectar" ese bean en cualquier lugar de tu aplicación donde lo necesites, y Spring se 
+encargará de proporcionarte la instancia correcta.
+En resumen, un bean es simplemente un objeto que Spring crea y configura automáticamente para ti, y que puedes utilizar en tu aplicación de manera sencilla y segura.
+
+
+
+***************** INYECCION DE DEPENCIAS ************
+
+Que es dependencia:
+	Modularizacion => Programa debe seguir estructura(compuesto por diferentes clases independientes que funcionen como una unidad eje CPU)
+					  cada objeto se comunica entre ellos para funcionar bien. Por ejemplo el procesador no funciona sin su disipador
+					  cada objeto necesita de otro para funcionar bien
+					  la placa base depende de muchos objetos para poder funcionar
+					  el procesador tiene una DEPENDENCIA del disipador
+					  
+Inyeccion de dependencia-Definicion :
+					Spring es quien proporciona esa DEPENDENCIA para que la clase funcione
+					Spring el que INYECTE aquellos objetos(dependencia) para que funcione correctamente en vez de crear los objetos en la clase con operador NEW
+					Ventajas:
+						Otras clases necesitan las DEPENDENCIAS, ejemplo , es como si el disipador ademas de ponerselo al procesador, se pone a la tarjeta grafica
+
+.build
+
+*************************************************
+
+FRONT => Model
+
+BACKEND =>
+	
+	**** ENTITY => Tiene la estructura de la tabla
+	**** DTO =>  Se utilizan para comunicacion entre CONTROLLER  y SERVICE
+			*** Objetos que se manejan para diferentes acciones pero que se pueda manipular, ejemplo USUARIO-> PROSPECTO
+				contener los campos de una u otra tabla.
+			*** Colocar los datos que necesita
+			*** Unificacion de varias entidades, si necesito 2 campos de tabla A y 3 campos tabla B , es un objeto 
+				con informacion que necesito de acuerdo a la necesidad
+			*** algunas veces son iguales a los Entity
+			Un DTO (Data Transfer Object) es una clase utilizada para transferir datos entre las capas de una aplicación, 
+			generalmente entre la capa de controladores y la capa de servicio. A continuación, te mostraré cómo podría 
+			ser un DTO para la entidad Cliente que mencionamos anteriormente:
+			
+		
+	**** ADAPTER => Permite convertir DTO a MODEL(ENTITY) o viceversa
+		    la transformacion se presenta porque:
+			DTO 		  -> se usan para servicios REST , para recibir o enviar datos.
+			ENTITY(MODEL) -> Toma el DTO y se transforma a ENTITY(MODEL)
+    **** REPOSITORY =>
+         Trabajo netamente los model	
+			
+	
+	------------- Manipulacion de objetos ----------------
+	
+	(paso1)		 (paso2)      (paso3)			                      (paso4)                         (paso5)
+	ENTITY  ----> DTO ------>REPOSITORY (Son los dao) ------> ADAPTER(SERVICE-SERVICE IMPL) -------> CONTROLLER
+	
+	client --> 
+	enums  -->
+	
+	
+	
+******************** PASO A PASO LECTURA APLICACION **************************
+		capa 1:
+			Debe llevar @RestController
+			1. Controler
+			2. algunos retornan ResponseEntity <GenericResponse>
+		
+		capa 2:
+		    2. service(interfaz)(metodos que yo tenga, consultar, guardar) CRUD
+				2.1 interfaz declaro los metodos que envio y que devuelvo
+				2.2 se agrega al final de la interfaz el imp => implementacion
+			
+
+		capa 3:
+			2.3 SERVICE IMPLEMENTATION => en la implementacion esta el metodo, todos los procesos set get, consultas a la bd
+										deben llevar @Service
+										2.3.1 se colocan los logs
+										2.3.2 seteos 
+										2.3.3 Inyectar(crear un objeto de clases REPOSITORY y ADAPTER para manipularlos)
+											2.3.3.1 para inyectar @Autowired variable de tipo que requiero
+										2.3.4  Llamo los servicios WEB o llama las clases para llamado a los servicios
+										2.3.5 Aca utilizo ADAPTER - DTO - ENTITY
+										
+										Ejemplo:
+											consultar la informacion laboral
+											1. Creo variable de tipo Repository
+										
+			2.4 se generan respuesta correctas o incorrectas	
+			
+
+********************* ANOTACIONES ***********************
+
+CONTROLLER:
+@CrossOrigin: se utiliza en aplicaciones web basadas en Spring para habilitar el acceso de recursos cruzados (CORS, por sus siglas en inglés). 
+              CORS es un mecanismo de seguridad implementado en los navegadores que restringe las solicitudes HTTP realizadas desde un origen 
+			  (dominio, protocolo, puerto) diferente al del propio servidor.Al agregar la anotación @CrossOrigin a un controlador o a un método 
+			  de controlador específico, estás permitiendo que las solicitudes se realicen desde orígenes cruzados.
+
+ENTITY:
+	@Entity: Indica que la clase es una entidad(esta relacionada con la bd)
+	
+
+@NotEmpty(message = "Descripcion no puede estar vacio"): Indica que el campo no puede esta vacio y mostraria el mensaje personalizado
+@Data:  Genera los getters y setter automaticamente haciendolos publicos
+@NoArgsConstructor: Genera un constructor sin argumentos publicos 
+@JsonPropertyOrder:  es una anotacion que permite definir el orden en que se deben serializar las propiedades de una clase Json.
+				 SERIALIZACION OBJETOS:  La serialización a JSON es útil en muchas aplicaciones web, ya que permite la transmisión
+                     				     de datos estructurados entre diferentes sistemas y plataformas de forma segura y eficiente.
+										 
+										 La serialización es el proceso de convertir un objeto en un formato que pueda ser almacenado o 
+										 transmitido de forma segura y eficiente, como una cadena de texto o un archivo binario. 
+										 En el contexto de Java, la serialización se utiliza para guardar el estado de un objeto en disco o 
+										 para transmitir el objeto a través de una red a otro proceso o sistema.
+
+                                        En el caso específico de la serialización de objetos a formato JSON, como es el caso de la anotación 
+										@JsonPropertyOrder, se trata de la conversión de un objeto Java a una cadena de caracteres JSON, 
+										que es un formato de intercambio de datos ligero y ampliamente utilizado en aplicaciones web. 
+										La serialización a JSON implica tomar los campos y propiedades de un objeto y convertirlos en una 
+										estructura de datos JSON que pueda ser enviada o almacenada de manera segura y eficiente.
+										 
+										EJ: Persona persona = new Persona("Juan", 30, "Buenos Aires");
+										 
+										La serializacion en formato JSON seria:
+										{
+										  "nombre": "Juan",
+										  "edad": 30,
+										  "ciudad": "Buenos Aires"
+										}
+										Esta cadena de caracteres representa el objeto Persona en formato JSON, donde cada propiedad del objeto se ha convertido en una clave de objeto JSON. 
+										La serialización a JSON es útil en muchas aplicaciones web, ya que permite la transmisión de datos estructurados entre diferentes sistemas y plataformas
+										 de forma segura y eficiente.
+										 
+@JsonPropertyOrder(alphabetic = true): Serializara a formato json las propiedades de la clase en orden.			
+@Transactional: Asegura que todas las operaciones se cumplan asegurando la integridad de los datos.La anotación indica que el método debe ser ejecutado dentro de una transacción 
+                y que si ocurre algún error, la transacción debe ser revertida. por ej:
+				
+				@Service
+				public class MiServicio {
+
+					@Autowired
+					private MiRepositorio miRepositorio;
+
+					public void actualizarDatos() {
+						// actualizar varios registros en la base de datos
+						// ...
+						miRepositorio.save(registro1);
+						miRepositorio.save(registro2);
+						miRepositorio.save(registro3);
+						// ...
+					}
+				}
+				
+				Para este ejemplo asegura todas las operaciones si alguna sale mal reversa todas.
+				
+@EmbeddedId:  Es una anotacion que me permite establecer una clase que representa una tabla que tiene llave compuesta, es decir representa la tabla que normaliza
+			  simplifica el manejo de claves primarias compuestas JPA
+			  
+			  @Embeddable: 
+			
+SERIALIZACION EN PROGRAMACION:
+	Cuando se habla de serialización en programación, se refiere a la posibilidad de convertir un objeto (una instancia de una clase) en una secuencia de bytes, 
+	que se puede almacenar o transmitir. Por lo tanto, la serialización permite guardar la información de un objeto en un formato que se puede almacenar en un archivo, 
+	una base de datos, enviar por la red, etc.
+	Una vez que un objeto ha sido serializado, se puede transmitir a través de una red, almacenar en un archivo o base de datos, y luego, más tarde, se puede leer la 
+	secuencia de bytes y convertirla de vuelta en un objeto. De esta manera, se puede restaurar el estado de un objeto en cualquier momento, incluso en otro programa 
+	o en una ubicación diferente.
+	La implementación de la interfaz Serializable en una clase indica que los objetos de esa clase pueden ser serializados. Algunos ejemplos en los que puede ser útil 
+	la serialización son: guardar el estado de una aplicación en un archivo, enviar información entre procesos en una red, almacenar objetos en una base de datos, y más.				
+							
+
+@Valid RequestBody:  En resumen, @Valid junto con @RequestBody simplifica la validación de los datos enviados en el cuerpo de una solicitud HTTP y permite manejar 
+                     automáticamente los errores de validación.
+
+
+@Entity  => indica clase java que representa tabla de la bd, clases que mapearan las tablas
+	@Table => recibe el nombre de la tabla que mapea la clase
+	@Column => anotacion que recibe el atributo de nuestra clase, se pone solo cuando el nombre de nuestra columna sea diferente al atributo de la tabla
+	@Id  & @EmbededId => representa clave primaria , EmbededId Es cuando es llave compuesta
+	@GeneratedValue =>  es una anotacion que permite genera valores automaticamente para nuestras tablas
+	@OneToMany & @ManyToOne  => representa relaciones en nuestras clases 
+	@OneToMany(mappedBy) => relacion que va de uno a muchos. En mappedBy se debe especificar el nombre de la variable privada asociada a la clase que se relaciona
+	@ManyToOne => relacion que va de muchos a uno
+
+
+
+
+										
+			
